@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const cableTypes = [
+  {
+    name: 'Ethernet Cables',
+    description: 'Cat5e, Cat6, and Cat6a cables forming the backbone of most LANs, offering reliable data transfer for internet access, VoIP, and video conferencing.',
+    applications: ['Office Networks', 'Data Centers', 'VoIP Systems'],
+  },
+  {
+    name: 'Fiber Optic Cable',
+    description: 'High-speed, high-bandwidth solution transmitting data through light signals with minimal signal loss, ideal for long-distance networks.',
+    applications: ['Telecommunications', 'Campus Networks', 'Cloud Infrastructure'],
+  },
+  {
+    name: 'Twisted Pair Cable',
+    description: 'Cost-effective copper wire solutions (STP and UTP) minimizing electromagnetic interference for flexible installations.',
+    applications: ['Office Networks', 'Telephone Systems', 'CCTV Setups'],
+  },
+  {
+    name: 'Coaxial Cable',
+    description: 'Durable interference-resistant solution with metallic shielding, suitable for specific networking needs and broadcasting.',
+    applications: ['CCTV Systems', 'Cable TV', 'Internet Distribution'],
+  },
+];
+
+const benefits = [
+  {
+    title: 'Reliable Data Transfer',
+    description: 'Structured cabling ensures stable and uninterrupted data flow, minimizing data loss and latency.',
+    icon: 'check',
+  },
+  {
+    title: 'Scalability',
+    description: 'Designed to handle increased data loads and accommodate additional devices without complete network overhaul.',
+    icon: 'arrow-up',
+  },
+  {
+    title: 'Enhanced Connectivity',
+    description: 'Facilitates smooth communication between devices, enhancing collaboration and productivity.',
+    icon: 'network',
+  },
+  {
+    title: 'Cost-Effectiveness',
+    description: 'Reduces long-term maintenance costs by minimizing downtime and simplifying troubleshooting.',
+    icon: 'dollar',
+  },
+];
+
+const bestPractices = [
+  'Choose equipment designed for your needs',
+  'Take wiring and cabling into account',
+  'Standardize as much as possible',
+  'Consider redundancy for critical systems',
+  'Make monitoring and management a priority',
+  'Ensure your network is secure',
+  'Know every aspect of your network',
+  'Consult professionals when in doubt',
+];
+---
+
+<Layout 
+  title="Network Cabling Solutions - CageIT" 
+  description="Professional network cabling services including LAN installations, fiber optic solutions, and data centre infrastructure."
+>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-primary-900 to-primary-700 text-white py-20">
+      <div class="container-custom">
+        <div class="max-w-4xl">
+          <h1 class="mb-6">Professional Network Cabling Solutions</h1>
+          <p class="text-xl text-primary-100 leading-relaxed mb-8">
+            Expert network cabling services that form the backbone of modern networking, enabling seamless communication and efficient data transmission for your business infrastructure.

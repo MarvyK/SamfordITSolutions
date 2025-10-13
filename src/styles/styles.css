@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Economica:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+:root {
+  --grey-bg: #2f3339;
+}
+
+.bg-grey {
+  background-color: var(--grey-bg);
+}
+.bg-green {
+  background-color: #11875b;
+}
+.bg-turquoise {
+  background-color: #12bac4;
+}
+.button-bg-green {
+  background-color: #075a5a;
+}
+.text-turquoise {
+  color: #12bac4;
+}
+text-green {
+  color: #11875b;
+}
+.to-primary-900 {
+  --tw-bg-opacity: 1;
+  background-color: #11875b / var(--tw-bg-opacity);
+}
+.economica-regular {
+  font-family: "Economica", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.economica-bold {
+  font-family: "Economica", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.economica-regular-italic {
+  font-family: "Economica", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.economica-bold-italic {
+  font-family: "Economica", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}

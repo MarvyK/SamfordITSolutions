@@ -1,0 +1,160 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import { Image } from 'astro:assets';
+
+// Import all service images
+import networkCablingImg from '/public/images/icon_network_cabling.png';
+import dataCentreImg from '/public/images/icon_data_center.png';
+import cctvImg from '/public/images/icons_cctv_accesscontrol.png';
+import cloudImg from '/public/images/icon_cloud_services.png';
+import cybersecurityImg from '/public/images/icon_cybersecurity.png';
+import managedItImg from '/public/images/icon_managed_it.png';
+
+
+const services = [
+  {
+    title: 'Network Cabling',
+    description: 'Professional LAN installations with copper and fibre optic solutions for optimal performance.',
+    icon: 'network',
+    image: networkCablingImg
+  },
+  {
+    title: 'Data Centre Solutions',
+    description: 'Complete data centre design and build services with network optimization.',
+    icon: 'datacenter',
+    image: dataCentreImg
+  },
+  {
+    title: 'CCTV & Access Control',
+    description: 'High-performance security solutions with advanced network connectivity.',
+    icon: 'security',
+    image: cctvImg,
+  },
+  {
+    title: 'Cloud Solutions',
+    description: 'Scalable cloud infrastructure to support your growing business needs.',
+    icon: 'cloud',
+    image: cloudImg,
+  },
+  {
+    title: 'Cybersecurity Services',
+    description: 'Comprehensive security measures to protect your IT infrastructure.',
+    icon: 'shield',
+    image: cybersecurityImg,
+  },
+  {
+    title: 'Managed IT Support',
+    description: '24/7 IT support and monitoring to ensure seamless operations.',
+    icon: 'support',
+    image: managedItImg,
+  },
+];
+
+const benefits = [
+  'Reliable and efficient data transfer',
+  'Scalability to support future growth',
+  'Enhanced communication and connectivity',
+  'Long-term cost-effectiveness',
+  'Minimized downtime and maintenance',
+  'Professional installation and support',
+];
+---
+
+<Layout title="Samford IT Solutions - Your Trusted IT Solutions Provider">
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <Hero />
+
+    <!-- Services Section -->
+    <section class="section bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-16">
+          <h2 class="mb-4">What We Offer</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Comprehensive IT solutions designed to meet your business needs and drive growth
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 lg:grid-cols-3 gap-8">
+          {services.map(service => (
+            <div class="card group hover:border-primary-200 border border-transparent transition-all duration-300">
+              <article>
+              {service.image && (
+                <Image src={service.image} alt={service.title} class="h-auto w-40 float-left"/>
+              )}
+              <h3 class="text-xl font-semibold mb-3 text-left">{service.title}</h3></article>
+              <p class="text-gray-600 mb-4">{service.description}</p>
+              <a href="/services" class="text-primary-600 font-medium hover:text-primary-700 inline-flex items-center group-hover:gap-2 gap-1 transition-all">
+                Learn more
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section bg-gray-50">
+      <div class="container-custom">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="mb-6">Why Choose Samford IT Solutions?</h2>
+            <p class="text-lg text-gray-600 mb-8">
+              We deliver comprehensive managed IT services that ensure seamless operations, optimal performance, and sustainable growth for your business.
+            </p>
+            <ul class="space-y-4">
+              {benefits.map(benefit => (
+                <li class="flex items-start">
+                  <svg class="w-6 h-6 text-secondary-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span class="text-gray-700">{benefit}</span>
+                </li>
+              ))}
+            </ul>
+            <a href="/about" class="btn btn-primary bg-turquoise mt-8">
+              Learn More About Us
+            </a>
+          </div>
+          <div class="relative">
+            <img 
+              src="/public/images/it_infrastructure.png" 
+              alt="IT infrastructure solutions" 
+              class="rounded-2xl shadow-xl"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section text-white bg-turquoise">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="mb-6">Ready to Transform Your IT Infrastructure?</h2>
+          <p class="text-xl text-primary-100 mb-8">
+            Get in touch with our experts today and discover how we can help your business thrive with reliable IT solutions.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/contact" class="btn bg-white text-primary-900 hover:bg-gray-100">
+              Contact Us Today
+            </a>
+            <a href="/services" class="btn border-2 border-white text-white hover:bg-white hover:text-primary-900 button-bg-green">
+              View All Services
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
