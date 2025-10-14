@@ -6,6 +6,7 @@ import Hero from '../components/Hero.astro';
 import { Image } from 'astro:assets';
 
 // Import all service images
+import itinfrastructureImg from '/public/images/it_infrastructure.png';
 import networkCablingImg from '/public/images/icon_network_cabling.png';
 import dataCentreImg from '/public/images/icon_data_center.png';
 import cctvImg from '/public/images/icons_cctv_accesscontrol.png';
@@ -125,11 +126,7 @@ const benefits = [
             </a>
           </div>
           <div class="relative">
-            <img 
-              src="/public/images/it_infrastructure.png" 
-              alt="IT infrastructure solutions" 
-              class="rounded-2xl shadow-xl"
-            />
+            <Image src={itinfrastructureImg} alt="IT infrastructure solutions" class="rounded-2xl shadow-2xl" />           
           </div>
         </div>
       </div>
