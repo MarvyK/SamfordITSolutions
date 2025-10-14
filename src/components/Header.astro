@@ -2,13 +2,14 @@
 const currentPath = Astro.url.pathname;
 import { Image } from 'astro:assets';
 import logoImg from '/public/images/samford_it_solutions.png';
+const base = import.meta.env.BASE_URL;
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/services', label: 'Services' },
-  { href: '/network-cabling', label: 'Network Cabling' },
-  { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
+  { href: `${base}`, label: 'Home' },
+  { href: `${base}/services`, label: 'Services' },
+  { href: `${base}/network-cabling`, label: 'Network Cabling' },
+  { href: `${base}/about`, label: 'About' },
+  { href: `${base}/contact`, label: 'Contact' },
 ];
 ---
 
@@ -18,7 +19,7 @@ const navLinks = [
       <!-- Logo -->
       <a href="/" class="flex items-center space-x-2">
         <Image src={logoImg} alt="Samford IT Solutions" class="h-20 w-auto" />      
-        <span class="text-4xl font-heading font-bold text-turquoise leading-6 text-center economica-bold">Samford <br><span class="text-xl text-white  text-center">IT Solutions</span></span>
+        <span class="text-2xl font-heading font-bold text-turquoise leading-6 text-center economica-bold">Samford <br><span class="text-xl text-white  text-center">IT Solutions</span></span>
       </a>
 
       <!-- Desktop Navigation -->
