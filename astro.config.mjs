@@ -4,7 +4,7 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: "https://MarvyK.github.io", // Replace with your GitHub username
-  base: "/SamfordITSolutions", // Replace with your repository name (e.g., '/cageit-website')
+  // base: "/SamfordITSolutions",
   integrations: [
     tailwind({
       applyBaseStyles: false,
