@@ -1,5 +1,7 @@
 ---
 const currentPath = Astro.url.pathname;
+import { Image } from 'astro:assets';
+import logoImg from '/public/images/samford_it_solutions.png';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -15,11 +17,7 @@ const navLinks = [
     <div class="flex items-center justify-between h-20">
       <!-- Logo -->
       <a href="/" class="flex items-center space-x-2">
-        <img 
-          src="/public/images/samford_it_solution.png" 
-          alt="Samford IT Solutions Logo" 
-          class="h-20 w-auto"
-        />      
+        <Image src={logoImg} alt="Samford IT Solutions" class="h-20 w-auto" />      
         <span class="text-4xl font-heading font-bold text-turquoise leading-6 text-center economica-bold">Samford <br><span class="text-xl text-white  text-center">IT Solutions</span></span>
       </a>
 
