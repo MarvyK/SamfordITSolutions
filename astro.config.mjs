@@ -5,6 +5,7 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: "https://MarvyK.github.io", // Replace with your GitHub username
   base: "/SamfordITSolutions",
+  // base: "/it",
   integrations: [
     tailwind({
       applyBaseStyles: false,
