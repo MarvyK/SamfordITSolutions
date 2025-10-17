@@ -1,0 +1,306 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const values = [
+  {
+    title: 'Reliability',
+    description: 'We deliver consistent, high-quality IT solutions that you can depend on for seamless operations.',
+  },
+  {
+    title: 'Innovation',
+    description: 'We stay ahead of industry trends to provide cutting-edge technology solutions for your business.',
+  },
+  {
+    title: 'Expertise',
+    description: 'Our experienced team brings deep technical knowledge to every project we undertake.',
+  },
+  {
+    title: 'Support',
+    description: 'We provide 24/7 support to ensure your IT infrastructure runs without interruption.',
+  },
+];
+
+const team = [
+  {
+    name: 'John Smith',
+    role: 'Founder & CEO',
+    description: 'With 15+ years in IT infrastructure, John leads Samford IT Solutions with vision and expertise.',
+  },
+  {
+    name: 'Sarah Johnson',
+    role: 'Technical Director',
+    description: 'Sarah oversees all technical projects and ensures quality standards are met.',
+  },
+  {
+    name: 'Mike Davis',
+    role: 'Network Solutions Manager',
+    description: 'Mike specializes in designing and implementing complex network infrastructures.',
+  },
+  {
+    name: 'Lisa Chen',
+    role: 'Cybersecurity Lead',
+    description: 'Lisa ensures all client systems are protected with the latest security measures.',
+  },
+];
+
+const stats = [
+  {
+    number: '10+',
+    label: 'Years of Experience',
+  },
+  {
+    number: '500+',
+    label: 'Projects Completed',
+  },
+  {
+    number: '200+',
+    label: 'Active Clients',
+  },
+  {
+    number: '99.9%',
+    label: 'Uptime Guarantee',
+  },
+];
+---
+
+<Layout 
+  title="About Samford IT Solutions - Your IT Solutions Partner" 
+  description="Learn about Samford IT Solutions, our mission, values, and the experienced team behind end-to-end IT solutions."
+>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative thegreen text-white py-20">
+      <div class="container-custom">
+        <div class="max-w-4xl">
+          <h1 class="mb-6 text-5xl economica-bold">About Samford IT Solutions</h1>
+          <p class="text-xl text-primary-100 leading-relaxed">
+            We're your trusted partner in IT infrastructure and managed services, dedicated to helping businesses thrive with reliable, innovative technology solutions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="section bg-white">
+      <div class="container-custom">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="mb-6 text-5xl economica-bold">Our Story</h2>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              Founded over 5 years ago, Samford IT Solutions emerged from a simple vision: to provide comprehensive IT solutions that enable businesses to operate seamlessly without worrying about their technical infrastructure.
+            </p>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              What started as a small team of network specialists has grown into a full-service IT solutions provider serving hundreds of clients across various industries. We've built our reputation on reliability, expertise, and unwavering commitment to our clients' success.
+            </p>
+            <p class="text-gray-600 leading-relaxed">
+              Today, Samford IT Solutions stands as a trusted partner for businesses seeking end-to-end IT solutions, from network cabling and infrastructure design to managed services and cybersecurity. We continue to evolve, staying ahead of technology trends to deliver solutions that drive sustainable growth.
+            </p>
+          </div>
+          <div>
+            <img 
+              src="/public/images/SamfordITSolutions_Logo.jpg" 
+              alt="Samford IT Solutions office" 
+              class=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="section bg-gray-50">
+      <div class="container-custom">
+        <div class="grid md:grid-cols-2 gap-12">
+          <div class="card">
+            <h3 class="mb-4 text-3xl economica-bold">Our Mission</h3>
+            <p class="text-gray-600 leading-relaxed">
+              To deliver innovative, reliable IT solutions that empower businesses to achieve their goals through seamless operations, optimal performance, and sustainable growth. We are committed to understanding each client's unique needs and providing tailored solutions that exceed expectations.
+            </p>
+          </div>
+          <div class="card">
+            <h3 class="mb-4 text-3xl economica-bold">Our Vision</h3>
+            <p class="text-gray-600 leading-relaxed">
+              To be the leading managed IT solutions provider in our region, recognized for technical excellence, customer-centric service, and innovation. We envision a future where businesses of all sizes have access to enterprise-grade IT infrastructure and support.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="section bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-16">
+          <h2 class="mb-4 text-3xl economica-bold">Our Core Values</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            These principles guide everything we do and shape how we serve our clients
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {values.map(value => (
+            <div class="card text-center hover:shadow-xl transition-shadow">
+              <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-3">{value.title}</h3>
+              <p class="text-gray-600">{value.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section thegreen text-white">
+      <div class="container-custom">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {stats.map(stat => (
+            <div class="text-center">
+              <p class="text-5xl font-bold mb-2">{stat.number}</p>
+              <p class="text-primary-200">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Team -->
+    <section class="section bg-gray-50">
+      <div class="container-custom">
+        <div class="text-center mb-16">
+          <h2 class="mb-6 text-5xl economica-bold">Meet Our Team</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Experienced professionals dedicated to delivering excellence in every project
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {team.map(member => (
+            <div class="card text-center hover:shadow-xl transition-shadow">
+              <div class="w-24 h-24 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                </svg>
+              </div>
+              <h3 class="text-4xl font-semibold mb-2 economica-bold">{member.name}</h3>
+              <p class="text-primary-600 font-medium mb-3">{member.role}</p>
+              <p class="text-gray-600 text-sm">{member.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section bg-white">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="mb-12 text-center mb-6 text-5xl economica-bold">Why Choose Samford IT Solutions?</h2>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="flex items-start space-x-4">
+              <div class="w-8 h-8 bg-secondary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <svg class="w-5 h-5 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-2xl economica-bold text-gray-900 mb-2">Proven Track Record</h3>
+                <p class="text-gray-600">Over a decade of successful projects and satisfied clients across multiple industries.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-8 h-8 bg-secondary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <svg class="w-5 h-5 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-2xl economica-bold text-gray-900 mb-2">Expert Team</h3>
+                <p class="text-gray-600">Experienced professionals with deep technical expertise and industry certifications.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-8 h-8 bg-secondary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <svg class="w-5 h-5 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-2xl economica-bold text-gray-900 mb-2">24/7 Support</h3>
+                <p class="text-gray-600">Round-the-clock monitoring and support to ensure your systems run without interruption.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-8 h-8 bg-secondary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <svg class="w-5 h-5 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-2xl economica-bold text-gray-900 mb-2">Custom Solutions</h3>
+                <p class="text-gray-600">Tailored IT solutions designed to meet your specific business requirements and goals.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-8 h-8 bg-secondary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <svg class="w-5 h-5 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-2xl economica-bold text-gray-900 mb-2">Cost-Effective</h3>
+                <p class="text-gray-600">Optimized solutions that maximize ROI while minimizing operational costs.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-8 h-8 bg-secondary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <svg class="w-5 h-5 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-2xl economica-bold text-gray-900 mb-2">Continuous Innovation</h3>
+                <p class="text-gray-600">Staying ahead of industry trends to provide cutting-edge technology solutions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section bg-gradient-to-br from-primary-600 to-primary-700 thegreen text-white">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="mb-6 text-5xl economica-bold">Ready to Partner with Samford IT Solutions?</h2>
+          <p class="text-xl text-primary-100 mb-8">
+            Let's discuss how our IT solutions can drive your business forward.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/contact" class="btn border-2 bg-primary-500 text-primary-900 hover:bg-gray-100">
+              Get In Touch
+            </a>
+            <a href="/services" class="btn border-2 bg-primary-500 text-primary-900 hover:bg-gray-100">
+              Explore Services
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

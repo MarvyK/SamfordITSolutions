@@ -48,3 +48,15 @@ text-green {
   font-weight: 700;
   font-style: italic;
 }
+.text-primary-600 {
+  --tw-text-opacity: 1;
+  color: rgb(17 135 91 / var(--tw-text-opacity, 1));
+}
+.border-primary-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(17 135 91 / var(--tw-border-opacity, 1));
+}
+.bg-primary-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(164 219 199 / var(--tw-bg-opacity, 1));
+}
