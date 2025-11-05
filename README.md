@@ -1,4 +1,4 @@
-# Astro Starter Kit: Minimal
+# Samford IT Solutions - built on the Astro framework
 
 ```sh
 npm create astro@latest -- --template minimal
