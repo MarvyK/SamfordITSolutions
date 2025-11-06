@@ -17,61 +17,71 @@ import audioVisualImg from '/public/images/icon_audiovisual.png';
 import upsImg from '/public/images/icon_ups.png';
 import biometricImg from '/public/images/icon_biometrics.png';
 
+const base = import.meta.env.BASE_URL;
 
 const services = [
   {
     title: 'Network Cabling',
     description: 'Professional LAN installations with copper and fibre optic solutions for optimal performance.',
     icon: 'network',
-    image: networkCablingImg
+    image: networkCablingImg,
+    link: `${base}/networkcabling`,
   },
   {
     title: 'Data Centre Solutions',
     description: 'Complete data centre design and build services with network optimization.',
     icon: 'datacenter',
-    image: dataCentreImg
+    image: dataCentreImg,
+    link: `${base}/data-centre`,
   },
   {
     title: 'CCTV & Access Control',
     description: 'High-performance security solutions with advanced network connectivity.',
     icon: 'security',
     image: cctvImg,
+    link: `${base}/cctv-access-control`,
   },
   {
     title: 'Cloud Solutions',
     description: 'Scalable cloud infrastructure to support your growing business needs.',
     icon: 'cloud',
     image: cloudImg,
+    link: `${base}/services`,
   },
   {
     title: 'Cybersecurity Services',
     description: 'Comprehensive security measures to protect your IT infrastructure.',
     icon: 'shield',
     image: cybersecurityImg,
+    link: `${base}/services`,
   },
   {
     title: 'Managed IT Support',
     description: '24/7 IT support and monitoring to ensure seamless operations.',
     icon: 'support',
     image: managedItImg,
+    link: `${base}/services`,
   },
   {
     title: 'Audio Visual Solutions',
     description: 'We transform spaces into immersive experiences with cutting-edge audio visual technology.',
     icon: 'audiovisual',
     image: audioVisualImg,
+    link: `${base}/services`,
   },
   {
     title: 'UPS Systems',
     description: 'We provide reliable uninterruptible power systems for seamless business continuity always.',
     icon: 'ups',
     image: upsImg,
+    link: `${base}/services`,
   },
   {
     title: 'Biometric Systems',
     description: 'Biometric systems ensuring secure network access and efficient cable management solutions.',
     icon: 'infrastructure',
     image: biometricImg,
+    link: `${base}/services`,
   }
 ];
 
@@ -83,7 +93,7 @@ const benefits = [
   'Minimized downtime and maintenance',
   'Professional installation and support',
 ];
-const base = import.meta.env.BASE_URL;
+
 ---
 
 <Layout title="Samford IT Solutions - Your Trusted IT Solutions Provider">
@@ -97,7 +107,7 @@ const base = import.meta.env.BASE_URL;
     <section class="section bg-white">
       <div class="container-custom">
         <div class="text-center mb-16">
-          <h2 class="mb-4 text-5xl economica-bold">What We Offer</h2>
+          <h2 class="mb-4 text-5xl economica-bold">Services we offer</h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
             Comprehensive IT solutions designed to meet your business needs and drive growth
           </p>
@@ -112,7 +122,7 @@ const base = import.meta.env.BASE_URL;
               )}
               <h3 class="text-3xl font-semibold mb-3 text-left economica-bold">{service.title}</h3></article>
               <p class="text-gray-600 mb-4">{service.description}</p>
-              <a href="/services" class="text-primary-600 font-medium hover:text-primary-700 inline-flex items-center group-hover:gap-2 gap-1 transition-all">
+              <a href={service.link} class="text-primary-600 font-medium hover:text-primary-700 inline-flex items-center group-hover:gap-2 gap-1 transition-all">
                 Learn more
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>

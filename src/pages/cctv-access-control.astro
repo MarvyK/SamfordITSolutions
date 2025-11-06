@@ -1,0 +1,430 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+import cctv from '/public/images/icons_cctv_accesscontrol.png';
+
+const base = import.meta.env.BASE_URL;
+const cctvSolutions = [
+  {
+    title: 'IP CCTV Systems',
+    description: 'High-definition network cameras with advanced features including motion detection, night vision, and remote monitoring capabilities.',
+    features: ['HD/4K Resolution', 'Remote Access', 'Cloud Storage', 'Mobile Apps'],
+  },
+  {
+    title: 'Analog CCTV',
+    description: 'Cost-effective traditional surveillance systems suitable for small to medium-sized installations with reliable performance.',
+    features: ['Budget Friendly', 'Easy Installation', 'Proven Technology', 'Local Storage'],
+  },
+  {
+    title: 'Video Analytics',
+    description: 'Intelligent video analysis with facial recognition, motion tracking, and automated alerts for enhanced security monitoring.',
+    features: ['Facial Recognition', 'Motion Detection', 'Automated Alerts', 'Behavior Analysis'],
+  },
+  {
+    title: 'Video Management',
+    description: 'Centralized control and management of all surveillance cameras with advanced recording, playback, and export capabilities.',
+    features: ['Centralized Control', 'Recording Management', 'Multi-site Support', 'Easy Export'],
+  },
+];
+
+const accessControlSolutions = [
+  {
+    title: 'Biometric Systems',
+    description: 'Advanced fingerprint, facial recognition, and iris scanning systems for secure, contactless access control.',
+    features: ['Fingerprint Readers', 'Facial Recognition', 'Iris Scanners', 'Multi-factor Auth'],
+  },
+  {
+    title: 'Card Access Systems',
+    description: 'Proximity cards and smart card readers providing convenient, secure access for employees and authorized personnel.',
+    features: ['RFID Cards', 'Smart Cards', 'Key Fobs', 'Mobile Credentials'],
+  },
+  {
+    title: 'Intercom Systems',
+    description: 'Two-way audio/video communication systems for visitor verification and secure entry management.',
+    features: ['Video Intercom', 'Two-way Audio', 'Remote Unlocking', 'Visitor Logs'],
+  },
+  {
+    title: 'Time & Attendance',
+    description: 'Integrated time tracking solutions that combine access control with employee attendance monitoring.',
+    features: ['Clock In/Out', 'Attendance Reports', 'Shift Management', 'Integration Ready'],
+  },
+];
+
+const industries = [
+  {
+    name: 'Corporate Offices',
+    description: 'Secure building access, visitor management, and employee monitoring for professional environments.',
+    icon: 'building',
+  },
+  {
+    name: 'Retail Stores',
+    description: 'Loss prevention, customer safety monitoring, and point-of-sale surveillance for retail operations.',
+    icon: 'store',
+  },
+  {
+    name: 'Manufacturing',
+    description: 'Production line monitoring, safety compliance, and restricted area access control for industrial facilities.',
+    icon: 'factory',
+  },
+  {
+    name: 'Healthcare',
+    description: 'Patient safety monitoring, secure medication storage access, and visitor tracking for medical facilities.',
+    icon: 'health',
+  },
+  {
+    name: 'Education',
+    description: 'Campus security, student safety monitoring, and controlled access to sensitive areas in schools.',
+    icon: 'education',
+  },
+  {
+    name: 'Residential',
+    description: 'Home security monitoring, smart access control, and perimeter protection for residential properties.',
+    icon: 'home',
+  },
+];
+
+const keyBenefits = [
+  {
+    title: 'Enhanced Security',
+    description: 'Multi-layered security measures protect your premises, assets, and people 24/7.',
+  },
+  {
+    title: 'Remote Monitoring',
+    description: 'View live feeds and control access from anywhere using mobile apps or web interfaces.',
+  },
+  {
+    title: 'Incident Evidence',
+    description: 'High-quality recordings provide valuable evidence for investigations and insurance claims.',
+  },
+  {
+    title: 'Access Control',
+    description: 'Restrict entry to authorized personnel only, with detailed audit trails of all access events.',
+  },
+  {
+    title: 'Cost Savings',
+    description: 'Reduce security staffing costs while improving overall security effectiveness.',
+  },
+  {
+    title: 'Scalability',
+    description: 'Systems that grow with your business, easily adding cameras and access points as needed.',
+  },
+];
+
+const features = [
+  'High-definition video quality (up to 4K)',
+  'Night vision and low-light capabilities',
+  'Motion detection and alerts',
+  'Remote access via mobile and web',
+  'Cloud and local storage options',
+  'Integration with access control',
+  'Facial recognition technology',
+  'License plate recognition',
+  'Two-way audio communication',
+  'Weatherproof outdoor cameras',
+  'PTZ (Pan-Tilt-Zoom) cameras',
+  'Video analytics and AI features',
+];
+---
+
+<Layout 
+  title="CCTV & Access Control Solutions - CageIT" 
+  description="Professional CCTV surveillance and access control systems. High-performance security solutions with advanced network connectivity for complete protection."
+>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative text-white py-20 thegreen">
+      <div class="container-custom">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="max-w-4xl">
+          <h1 class="mb-6 text-5xl economica-bold">CCTV & Access Control Solutions</h1>
+          <p class="text-xl text-primary-100 leading-relaxed mb-8">
+            Comprehensive security solutions combining advanced surveillance technology with intelligent access control systems. Protect your premises, assets, and people with integrated security infrastructure designed for reliability and ease of use.
+          </p>
+          <a href="/contact" class="btn bg-white text-primary-900 hover:bg-gray-100">
+            Request a Security Assessment
+          </a>
+        </div>
+        <div>
+            <Image src={cctv} alt="Samford IT Solutions" class=" w-auto" />
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CCTV Solutions -->
+    <section class="section bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-16">
+          <h2 class="mb-6 text-5xl economica-bold">CCTV Surveillance Solutions</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Advanced video surveillance systems leveraging high-performance network connectivity for comprehensive monitoring
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          {cctvSolutions.map(solution => (
+            <div class="card hover:shadow-2xl transition-shadow">
+              <div class="flex items-start gap-4 mb-4">
+                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-semibold">{solution.title}</h3>
+              </div>
+              <p class="text-gray-600 mb-6">{solution.description}</p>
+              <div>
+                <p class="font-medium text-gray-900 mb-3">Features:</p>
+                <div class="grid grid-cols-2 gap-2">
+                  {solution.features.map(feature => (
+                    <span class="bg-primary-50 text-primary-700 px-3 py-1 rounded-lg text-sm">
+                      {feature}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Access Control Solutions -->
+    <section class="section bg-gray-50">
+      <div class="container-custom">
+        <div class="text-center mb-16">
+          <h2 class="mb-6 text-5xl economica-bold">Access Control Solutions</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Intelligent access management systems ensuring secure entry and comprehensive audit trails
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          {accessControlSolutions.map(solution => (
+            <div class="card hover:shadow-2xl transition-shadow">
+              <div class="flex items-start gap-4 mb-4">
+                <div class="w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg class="w-6 h-6 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-semibold">{solution.title}</h3>
+              </div>
+              <p class="text-gray-600 mb-6">{solution.description}</p>
+              <div>
+                <p class="font-medium text-gray-900 mb-3">Features:</p>
+                <div class="grid grid-cols-2 gap-2">
+                  {solution.features.map(feature => (
+                    <span class="bg-secondary-50 text-secondary-700 px-3 py-1 rounded-lg text-sm">
+                      {feature}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Industries We Serve -->
+    <section class="section bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-16">
+          <h2 class="mb-6 text-5xl economica-bold">Industries We Serve</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Tailored security solutions for diverse business sectors and applications
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {industries.map(industry => (
+            <div class="card text-center hover:shadow-xl transition-shadow">
+              <div class="w-16 h-16 bg-gradient-to-br bg-primary-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-3">{industry.name}</h3>
+              <p class="text-gray-600 text-sm">{industry.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Benefits -->
+    <section class="section text-white thegreen">
+      <div class="container-custom">
+        <div class="text-center mb-16">
+          <h2 class="mb-6 text-5xl economica-bold">Why Choose Our Security Solutions?</h2>
+          <p class="text-xl text-primary-100 max-w-3xl mx-auto">
+            Advanced technology meets practical functionality for comprehensive security
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {keyBenefits.map(benefit => (
+            <div class="bg-primary-800 rounded-xl p-6 hover:bg-primary-700 transition-colors">
+              <h3 class="text-xl font-semibold mb-3">{benefit.title}</h3>
+              <p class="text-primary-100">{benefit.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Features List -->
+    <section class="section bg-gray-50">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="mb-6 text-5xl economica-bold text-center">System Features & Capabilities</h2>
+          
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {features.map(feature => (
+              <div class="flex items-start space-x-3 bg-white rounded-lg p-4">
+                <svg class="w-6 h-6 text-secondary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-gray-700">{feature}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integration Section -->
+    <section class="section bg-white">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-8 md:p-12">
+            <h2 class="mb-6 text-5xl economica-bold text-center">Integrated Security Solutions</h2>
+            <p class="text-gray-600 text-center mb-8 max-w-2xl mx-auto">
+              Our CCTV and access control systems work together seamlessly, providing a unified security platform with centralized management and control.
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="text-center">
+                <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                  </svg>
+                </div>
+                <h3 class="font-semibold mb-2">Unified Platform</h3>
+                <p class="text-gray-600 text-sm">Single interface for all security systems</p>
+              </div>
+
+              <div class="text-center">
+                <div class="w-16 h-16 bg-secondary-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                  </svg>
+                </div>
+                <h3 class="font-semibold mb-2">Automated Response</h3>
+                <p class="text-gray-600 text-sm">Trigger cameras when access events occur</p>
+              </div>
+
+              <div class="text-center">
+                <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                  </svg>
+                </div>
+                <h3 class="font-semibold mb-2">Comprehensive Reports</h3>
+                <p class="text-gray-600 text-sm">Detailed analytics and audit trails</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation Process -->
+    <section class="section bg-gray-50">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="mb-6 text-5xl economica-bold text-center">Our Installation Process</h2>
+          
+          <div class="space-y-8">
+            <div class="flex gap-6 items-start">
+              <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
+                1
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Site Assessment</h3>
+                <p class="text-gray-600">We evaluate your premises to identify vulnerabilities and determine optimal camera and access point placement.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-6 items-start">
+              <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
+                2
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">System Design</h3>
+                <p class="text-gray-600">Custom design tailored to your security requirements, budget, and infrastructure.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-6 items-start">
+              <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
+                3
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Professional Installation</h3>
+                <p class="text-gray-600">Expert installation with high-performance network cabling and proper equipment mounting.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-6 items-start">
+              <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
+                4
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Configuration & Testing</h3>
+                <p class="text-gray-600">Complete system configuration, testing, and optimization to ensure flawless operation.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-6 items-start">
+              <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
+                5
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Training & Support</h3>
+                <p class="text-gray-600">Comprehensive training for your team plus ongoing technical support and maintenance.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section text-white thegreen">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="mb-6 text-5xl economica-bold">Secure Your Premises Today</h2>
+          <p class="text-xl text-secondary-100 mb-8">
+            Protect your assets, people, and property with integrated CCTV and access control solutions from CageIT. Schedule a free security assessment.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/contact" class="btn bg-white text-secondary-900 hover:bg-gray-100">
+              Schedule Assessment
+            </a>
+            <a href={`${base}/services`}" class="btn border-2 border-white text-white hover:bg-white hover:text-secondary-900">
+              View All Services
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

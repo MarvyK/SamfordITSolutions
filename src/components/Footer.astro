@@ -6,12 +6,46 @@ const base = import.meta.env.BASE_URL;
 const currentYear = new Date().getFullYear();
 
 const services = [
-  'Network Cabling',
-  'Data Centre Solutions',
-  'CCTV & Access Control',
-  'Biometric Systems',
-  'Audio Visual Solutions',
-  'UPS Systems',
+  {
+    title: 'Network Cabling',
+    link: `${base}/networkcabling`,
+  },
+  {
+    title: 'Data Centre Solutions',
+    link: `${base}/data-centre`,
+  },
+  {
+    title: 'CCTV & Access Control',
+    link: `${base}/cctv-access-control`,
+  },
+  {
+    title: 'Cloud Solutions',
+    link: `${base}/services`,
+  },
+  {
+    title: 'Cybersecurity Services',
+    link: `${base}/services`,
+  },
+  {
+    title: 'Managed IT Support',
+    link: `${base}/services`,
+  },
+  {
+    title: 'IT Infrastructure',
+    link: `${base}/services`,
+  },
+  {
+    title: 'Biometric Systems',
+    link: `${base}/services`,
+  },
+  {
+    title: 'Audio Visual Solutions',
+    link: `${base}/services`,
+  },
+  {
+    title: 'UPS Systems',
+    link: `${base}/services`,
+  },  
 ];
 
 const quickLinks = [
@@ -63,8 +97,8 @@ const quickLinks = [
         <ul class="space-y-2">
           {services.map(service => (
             <li>
-              <a href={`${base}/services`} class="text-sm hover:text-primary-400 transition-colors">
-                {service}
+              <a href={service.link} class="text-sm hover:text-primary-400 transition-colors">
+                {service.title}
               </a>
             </li>
           ))}

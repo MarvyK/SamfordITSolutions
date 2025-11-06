@@ -5,61 +5,93 @@ import Footer from '../components/Footer.astro';
 import { Image } from 'astro:assets';
 import networkCablingImg from '/public/images/icon_network_cabling.png';
 
-const cableTypes = [
+// Import all service images
+import itinfrastructureImg from '/public/images/it_infrastructure.png';
+import networkCablingImg from '/public/images/icon_network_cabling.png';
+import dataCentreImg from '/public/images/icon_data_center.png';
+import cctvImg from '/public/images/icons_cctv_accesscontrol.png';
+import cloudImg from '/public/images/icon_cloud_services.png';
+import cybersecurityImg from '/public/images/icon_cybersecurity.png';
+import managedItImg from '/public/images/icon_managed_it.png';
+import audioVisualImg from '/public/images/icon_audiovisual.png';
+import upsImg from '/public/images/icon_ups.png';
+import biometricImg from '/public/images/icon_biometrics.png';
+
+const base = import.meta.env.BASE_URL;
+
+const services = [
   {
-    name: 'Ethernet Cables',
-    description: 'Cat5e, Cat6, and Cat6a cables forming the backbone of most LANs, offering reliable data transfer for internet access, VoIP, and video conferencing.',
-    applications: ['Office Networks', 'Data Centers', 'VoIP Systems'],
+    title: 'Network Cabling',
+    description: 'Professional LAN installations with copper and fibre optic solutions for optimal performance.',
+    icon: 'network',
+    image: networkCablingImg,
+    link: `${base}/networkcabling`,
   },
   {
-    name: 'Fiber Optic Cable',
-    description: 'High-speed, high-bandwidth solution transmitting data through light signals with minimal signal loss, ideal for long-distance networks.',
-    applications: ['Telecommunications', 'Campus Networks', 'Cloud Infrastructure'],
+    title: 'Data Centre Solutions',
+    description: 'Complete data centre design and build services with network optimization.',
+    icon: 'datacenter',
+    image: dataCentreImg,
+    link: `${base}/data-centre`,
   },
   {
-    name: 'Twisted Pair Cable',
-    description: 'Cost-effective copper wire solutions (STP and UTP) minimizing electromagnetic interference for flexible installations.',
-    applications: ['Office Networks', 'Telephone Systems', 'CCTV Setups'],
+    title: 'CCTV & Access Control',
+    description: 'High-performance security solutions with advanced network connectivity.',
+    icon: 'security',
+    image: cctvImg,
+    link: `${base}/cctv-access-control`,
   },
   {
-    name: 'Coaxial Cable',
-    description: 'Durable interference-resistant solution with metallic shielding, suitable for specific networking needs and broadcasting.',
-    applications: ['CCTV Systems', 'Cable TV', 'Internet Distribution'],
+    title: 'Cloud Solutions',
+    description: 'Scalable cloud infrastructure to support your growing business needs.',
+    icon: 'cloud',
+    image: cloudImg,
+    link: `${base}/services`,
   },
+  {
+    title: 'Cybersecurity Services',
+    description: 'Comprehensive security measures to protect your IT infrastructure.',
+    icon: 'shield',
+    image: cybersecurityImg,
+    link: `${base}/services`,
+  },
+  {
+    title: 'Managed IT Support',
+    description: '24/7 IT support and monitoring to ensure seamless operations.',
+    icon: 'support',
+    image: managedItImg,
+    link: `${base}/services`,
+  },
+  {
+    title: 'Audio Visual Solutions',
+    description: 'We transform spaces into immersive experiences with cutting-edge audio visual technology.',
+    icon: 'audiovisual',
+    image: audioVisualImg,
+    link: `${base}/services`,
+  },
+  {
+    title: 'UPS Systems',
+    description: 'We provide reliable uninterruptible power systems for seamless business continuity always.',
+    icon: 'ups',
+    image: upsImg,
+    link: `${base}/services`,
+  },
+  {
+    title: 'Biometric Systems',
+    description: 'Biometric systems ensuring secure network access and efficient cable management solutions.',
+    icon: 'infrastructure',
+    image: biometricImg,
+    link: `${base}/services`,
+  }
 ];
 
 const benefits = [
-  {
-    title: 'Reliable Data Transfer',
-    description: 'Structured cabling ensures stable and uninterrupted data flow, minimizing data loss and latency.',
-    icon: 'check',
-  },
-  {
-    title: 'Scalability',
-    description: 'Designed to handle increased data loads and accommodate additional devices without complete network overhaul.',
-    icon: 'arrow-up',
-  },
-  {
-    title: 'Enhanced Connectivity',
-    description: 'Facilitates smooth communication between devices, enhancing collaboration and productivity.',
-    icon: 'network',
-  },
-  {
-    title: 'Cost-Effectiveness',
-    description: 'Reduces long-term maintenance costs by minimizing downtime and simplifying troubleshooting.',
-    icon: 'dollar',
-  },
-];
-
-const bestPractices = [
-  'Choose equipment designed for your needs',
-  'Take wiring and cabling into account',
-  'Standardize as much as possible',
-  'Consider redundancy for critical systems',
-  'Make monitoring and management a priority',
-  'Ensure your network is secure',
-  'Know every aspect of your network',
-  'Consult professionals when in doubt',
+  'Reliable and efficient data transfer',
+  'Scalability to support future growth',
+  'Enhanced communication and connectivity',
+  'Long-term cost-effectiveness',
+  'Minimized downtime and maintenance',
+  'Professional installation and support',
 ];
 ---
 
@@ -74,9 +106,9 @@ const bestPractices = [
     <section class="relative text-white py-20 thegreen">
       <div class="container-custom">
         <div class="max-w-4xl">
-          <h1 class="mb-6 text-5xl economica-bold">Professional Network Cabling Solutions</h1>
+          <h1 class="mb-6 text-5xl economica-bold">Services we offer</h1>
           <p class="text-xl text-primary-100 leading-relaxed mb-8">
-            Expert network cabling services that form the backbone of modern networking, enabling seamless communication and efficient data transmission for your business infrastructure.
+            From network cabling to cloud solutions, we provide comprehensive managed IT services designed to ensure seamless operations, optimal performance, and sustainable growth.
           </p>
           <a href="/contact" class="btn border-2 bg-primary-500 text-primary-900 hover:bg-gray-100">
             Request a Quote
@@ -85,168 +117,25 @@ const bestPractices = [
       </div>
     </section>
 
-    <!-- What is Network Cabling -->
     <section class="section bg-white">
       <div class="container-custom">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 class="mb-6 text-4xl economica-bold">What is Network Cabling?</h2>
-            <p class="text-gray-600 leading-relaxed mb-4">
-              Network cabling is a structured system of cables that connects devices to a network within an IT infrastructure. It serves as the backbone of modern networking, enabling seamless communication and efficient transmission of data, voice, and video between computers, servers, routers, and switches.
-            </p>
-            <p class="text-gray-600 leading-relaxed mb-6">
-              A well-planned cabling system ensures efficient data transmission, minimal signal loss, and reliable connectivity, supporting both wired and wireless network operations. Whether in a small office or a large data centre, structured cabling enhances network performance and ensures uninterrupted business operations.
-            </p>
-            <div class="bg-primary-50 border-l-4 border-primary-600 p-6 rounded-r-lg">
-              <p class="text-primary-900 font-medium">
-                By providing a stable and scalable foundation, network cabling plays a critical role in maintaining an organized and efficient IT environment.
-              </p>
-            </div>
-          </div>
-          <div>
-            <Image src={networkCablingImg} alt="Samford IT Solutions" class=" w-auto" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Cable Types -->
-    <section class="section bg-gray-50">
-      <div class="container-custom">
-        <div class="text-center mb-16">
-          <h2 class="mb-6 text-4xl economica-bold">Types of Network Cables</h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Different cable types designed for specific applications, each offering unique advantages for your networking needs
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-8">
-          {cableTypes.map(cable => (
-            <div class="card">
-              <h3 class="text-2xl font-semibold mb-4">{cable.name}</h3>
-              <p class="text-gray-600 mb-6">{cable.description}</p>
-              <div>
-                <p class="font-medium text-gray-900 mb-3">Common Applications:</p>
-                <div class="flex flex-wrap gap-2">
-                  {cable.applications.map(app => (
-                    <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-sm font-medium">
-                      {app}
-                    </span>
-                  ))}
-                </div>
-              </div>
+        <div class="grid md:grid-cols-3 lg:grid-cols-3 gap-8">
+          {services.map(service => (
+            <div class="card group hover:border-primary-200 border border-transparent transition-all duration-300">
+              <article>
+              {service.image && (
+                <Image src={service.image} alt={service.title} class="h-auto w-40 float-left"/>
+              )}
+              <h3 class="text-3xl font-semibold mb-3 text-left economica-bold">{service.title}</h3></article>
+              <p class="text-gray-600 mb-4">{service.description}</p>
+              <a href={service.link} class="text-primary-600 font-medium hover:text-primary-700 inline-flex items-center group-hover:gap-2 gap-1 transition-all">
+                Learn more
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
             </div>
           ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- Benefits -->
-    <section class="section bg-white">
-      <div class="container-custom">
-        <div class="text-center mb-16">
-          <h2 class="mb-6 text-4xl economica-bold">Benefits of Professional Network Cabling</h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Well-structured cabling systems provide numerous advantages for your business infrastructure
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {benefits.map(benefit => (
-            <div class="text-center">
-              <div class="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg class="w-8 h-8 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-              </div>
-              <h3 class="text-3xl font-semibold mb-3 economica-bold">{benefit.title}</h3>
-              <p class="text-gray-600">{benefit.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- Best Practices -->
-    <section class="section bg-primary-900 text-white thegreen">
-      <div class="container-custom">
-        <div class="max-w-4xl mx-auto">
-          <div class="text-center mb-12">
-            <h2 class="mb-6 text-4xl economica-bold">Network Design Best Practices</h2>
-            <p class="text-xl text-primary-100">
-              Follow these essential guidelines for optimal network performance
-            </p>
-          </div>
-
-          <div class="grid md:grid-cols-2 gap-6">
-            {bestPractices.map(practice => (
-              <div class="flex items-start space-x-3">
-                <svg class="w-6 h-6 text-secondary-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-                <p class="text-primary-50">{practice}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Offered -->
-    <section class="section bg-white">
-      <div class="container-custom">
-        <div class="text-center mb-16">
-          <h2 class="mb-6 text-4xl economica-bold">Our Network Cabling Services</h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive cabling solutions tailored to your business requirements
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="card border-l-4 border-primary-600">
-            <h3 class="text-xl font-semibold mb-3">Project Management</h3>
-            <p class="text-gray-600">Complete network cable and installation project oversight</p>
-          </div>
-          <div class="card border-l-4 border-primary-600">
-            <h3 class="text-xl font-semibold mb-3">LAN Installation</h3>
-            <p class="text-gray-600">Copper and fibre network cabling with Cat6 options</p>
-          </div>
-          <div class="card border-l-4 border-primary-600">
-            <h3 class="text-xl font-semibold mb-3">Data Centre Solutions</h3>
-            <p class="text-gray-600">Design and build services with network optimization</p>
-          </div>
-          <div class="card border-l-4 border-primary-600">
-            <h3 class="text-xl font-semibold mb-3">UPS Integration</h3>
-            <p class="text-gray-600">UPS systems integrated with cable solutions</p>
-          </div>
-          <div class="card border-l-4 border-primary-600">
-            <h3 class="text-xl font-semibold mb-3">Security Systems</h3>
-            <p class="text-gray-600">CCTV and access control with network connectivity</p>
-          </div>
-          <div class="card border-l-4 border-primary-600">
-            <h3 class="text-xl font-semibold mb-3">Audio Visual Solutions</h3>
-            <p class="text-gray-600">Cable configurations for seamless AV integration</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="section text-white thegreen">
-      <div class="container-custom">
-        <div class="max-w-4xl mx-auto text-center">
-          <h2 class="mb-6 text-4xl economica-bold">Need Professional Network Cabling?</h2>
-          <p class="text-xl text-secondary-100 mb-8">
-            Our experienced technicians ensure accurate installation with minimal downtime. Get in touch for a consultation today.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/contact" class="btn border-2 bg-primary-500 text-primary-900 hover:bg-gray-100">
-              Request a Consultation
-            </a>
-            <a href="/services" class="btn border-2 bg-primary-500 text-primary-900 hover:bg-gray-100">
-              View All Services
-            </a>
-          </div>
         </div>
       </div>
     </section>

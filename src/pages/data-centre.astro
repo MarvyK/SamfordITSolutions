@@ -1,0 +1,353 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+import datacentre from '/public/images/icon_data_center.png';
+
+const solutions = [
+  {
+    title: 'Data Centre Design',
+    description: 'Comprehensive planning and architectural design for efficient, scalable data centre infrastructure tailored to your business needs.',
+    features: ['Capacity Planning', 'Layout Optimization', 'Airflow Design', 'Power Distribution'],
+  },
+  {
+    title: 'Infrastructure Build',
+    description: 'Complete construction and installation of data centre facilities with focus on reliability, security, and performance.',
+    features: ['Rack Installation', 'Cable Management', 'Power Systems', 'Cooling Solutions'],
+  },
+  {
+    title: 'Network Optimization',
+    description: 'High-performance network architecture designed to maximize speed, minimize latency, and ensure seamless connectivity.',
+    features: ['Network Architecture', 'Bandwidth Optimization', 'Redundancy Planning', 'Load Balancing'],
+  },
+  {
+    title: 'Migration Services',
+    description: 'Seamless data centre migration with minimal downtime, ensuring business continuity throughout the transition.',
+    features: ['Risk Assessment', 'Migration Planning', 'Data Transfer', 'Testing & Validation'],
+  },
+];
+
+const keyFeatures = [
+  {
+    title: 'Scalability',
+    description: 'Design infrastructure that grows with your business, accommodating future expansion without major overhauls.',
+    icon: 'scale',
+  },
+  {
+    title: 'High Availability',
+    description: 'Redundant systems and failover capabilities ensure 99.9% uptime for critical business operations.',
+    icon: 'uptime',
+  },
+  {
+    title: 'Security',
+    description: 'Multi-layered physical and digital security measures to protect your valuable data assets.',
+    icon: 'security',
+  },
+  {
+    title: 'Energy Efficiency',
+    description: 'Optimized cooling and power systems that reduce operational costs while maintaining performance.',
+    icon: 'energy',
+  },
+  {
+    title: 'Compliance',
+    description: 'Solutions designed to meet industry standards and regulatory requirements for data protection.',
+    icon: 'compliance',
+  },
+  {
+    title: 'Disaster Recovery',
+    description: 'Comprehensive backup and recovery systems to protect against data loss and ensure business continuity.',
+    icon: 'recovery',
+  },
+];
+
+const process = [
+  {
+    step: '01',
+    title: 'Assessment & Planning',
+    description: 'We analyze your current infrastructure, business requirements, and growth projections to create a comprehensive plan.',
+  },
+  {
+    step: '02',
+    title: 'Design & Architecture',
+    description: 'Our experts design an optimized data centre layout with efficient power, cooling, and network configurations.',
+  },
+  {
+    step: '03',
+    title: 'Implementation',
+    description: 'Professional installation of all hardware, cabling, and systems with rigorous quality control at every stage.',
+  },
+  {
+    step: '04',
+    title: 'Testing & Commissioning',
+    description: 'Comprehensive testing ensures all systems function optimally before going live, with full documentation provided.',
+  },
+  {
+    step: '05',
+    title: 'Ongoing Support',
+    description: 'Continuous monitoring, maintenance, and support to ensure peak performance and rapid issue resolution.',
+  },
+];
+
+const benefits = [
+  'Reduced operational costs through optimized infrastructure',
+  'Improved system reliability and uptime',
+  'Enhanced security and data protection',
+  'Scalable architecture for future growth',
+  'Compliance with industry standards',
+  'Expert ongoing support and maintenance',
+  'Faster deployment of new services',
+  'Improved disaster recovery capabilities',
+];
+---
+
+<Layout 
+  title="Data Centre Solutions - Samford IT Solutions" 
+  description="Professional data centre design, build, and optimization services. Scalable, secure, and efficient infrastructure solutions for your business."
+>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative text-white py-20 thegreen">
+      <div class="container-custom">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="max-w-4xl">
+          <h1 class="mb-6 text-5xl economica-bold">Data Centre Solutions</h1>
+          <p class="text-xl text-primary-100 leading-relaxed mb-8">
+            Design, build, and optimize robust data centre infrastructure that powers your business with reliability, security, and scalability. From initial planning to ongoing support, we deliver comprehensive solutions tailored to your needs.
+          </p>
+          <a href="/contact" class="btn bg-white text-primary-900 hover:bg-gray-100">
+            Request a Consultation
+          </a>
+        </div>
+        <div>
+            <Image src={datacentre} alt="Samford IT Solutions" class=" w-auto" />
+        </div>
+      </div></div>
+    </section>
+
+    <!-- Solutions Overview -->
+    <section class="section bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-16">
+          <h2 class="mb-6 text-4xl economica-bold">Our Data Centre Services</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Comprehensive solutions covering every aspect of data centre infrastructure
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          {solutions.map(solution => (
+            <div class="card hover:shadow-2xl transition-shadow">
+              <h3 class="text-2xl font-semibold mb-4">{solution.title}</h3>
+              <p class="text-gray-600 mb-6">{solution.description}</p>
+              <div>
+                <p class="font-medium text-gray-900 mb-3">Key Services:</p>
+                <ul class="space-y-2">
+                  {solution.features.map(feature => (
+                    <li class="flex items-center text-gray-600">
+                      <svg class="w-5 h-5 text-secondary-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="section bg-gray-50">
+      <div class="container-custom">
+        <div class="text-center mb-16">
+          <h2 class="mb-6 text-4xl economica-bold">Why Our Data Centre Solutions Stand Out</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Built on industry best practices with a focus on reliability, efficiency, and future-readiness
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {keyFeatures.map(feature => (
+            <div class="card text-center hover:shadow-xl transition-shadow">
+              <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-3">{feature.title}</h3>
+              <p class="text-gray-600">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-16">
+          <h2 class="mb-6 text-4xl economica-bold">Our Implementation Process</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            A proven methodology that ensures successful delivery from concept to completion
+          </p>
+        </div>
+
+        <div class="max-w-4xl mx-auto space-y-8">
+          {process.map((item, index) => (
+            <div class="flex items-start gap-6 group">
+              <div class="flex-shrink-0">
+                <div class="w-16 h-16 bg-gradient-to-br bg-primary-100 rounded-full flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform">
+                  {item.step}
+                </div>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-semibold mb-3">{item.title}</h3>
+                <p class="text-gray-600 leading-relaxed">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="section text-white thegreen">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="mb-6 text-4xl economica-bold">Benefits of Our Solutions</h2>
+            <p class="text-xl text-primary-100">
+              Transform your infrastructure with solutions that deliver tangible business value
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            {benefits.map(benefit => (
+              <div class="flex items-start space-x-3">
+                <svg class="w-6 h-6 text-secondary-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <p class="text-primary-50">{benefit}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technologies & Standards -->
+    <section class="section bg-gray-50">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="mb-6 text-4xl economica-bold text-center">Technologies & Standards We Work With</h2>
+          
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="card">
+              <h3 class="text-xl font-semibold mb-4">Infrastructure</h3>
+              <ul class="space-y-2 text-gray-600">
+                <li>• Cisco Systems</li>
+                <li>• Dell Technologies</li>
+                <li>• HPE Solutions</li>
+                <li>• Juniper Networks</li>
+                <li>• VMware</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3 class="text-xl font-semibold mb-4">Standards</h3>
+              <ul class="space-y-2 text-gray-600">
+                <li>• TIA-942 Compliant</li>
+                <li>• ISO 27001</li>
+                <li>• ANSI/BICSI 002</li>
+                <li>• Energy Star Certified</li>
+                <li>• LEED Standards</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3 class="text-xl font-semibold mb-4">Monitoring</h3>
+              <ul class="space-y-2 text-gray-600">
+                <li>• 24/7 System Monitoring</li>
+                <li>• DCIM Solutions</li>
+                <li>• Environmental Sensors</li>
+                <li>• Power Monitoring</li>
+                <li>• Predictive Analytics</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Study CTA -->
+    <section class="section bg-white">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-8 md:p-12">
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 class="text-3xl font-bold mb-4">Ready to Optimize Your Data Centre?</h3>
+              <p class="text-gray-600 mb-6">
+                Our experts are ready to assess your needs and design a solution that delivers results. Schedule a consultation to discuss your project.
+              </p>
+              <ul class="space-y-2 mb-6">
+                <li class="flex items-center text-gray-700">
+                  <svg class="w-5 h-5 text-secondary-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  Free initial consultation
+                </li>
+                <li class="flex items-center text-gray-700">
+                  <svg class="w-5 h-5 text-secondary-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  Detailed assessment report
+                </li>
+                <li class="flex items-center text-gray-700">
+                  <svg class="w-5 h-5 text-secondary-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  Custom solution proposal
+                </li>
+              </ul>
+            </div>
+            <div class="text-center md:text-right">
+              <a href="/contact" class="btn btn-primary inline-flex">
+                Schedule Consultation
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA --> 
+    <section class="section text-white thegreen">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="mb-6 text-4xl economica-bold">Build Your Future-Ready Data Centre</h2>
+          <p class="text-xl text-secondary-100 mb-8">
+            Partner with CageIT for data centre solutions that power your business growth with reliability, efficiency, and scalability.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/contact" class="btn bg-white text-secondary-900 hover:bg-gray-100">
+              Get Started
+            </a>
+            <a href="/services" class="btn border-2 border-white text-white hover:bg-white hover:text-secondary-900">
+              View All Services
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
