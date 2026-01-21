@@ -18,8 +18,9 @@ import upsImg from '/public/images/icon_ups.png';
 import biometricImg from '/public/images/icon_biometrics.png';
 import wifiOptimizationImg from '/public/images/icon_wifi.png';
 import fixedWireless from '/public/images/icon_fixedWireless.png';
+import smartHome from '/public/images/icon_smart.png';
 import voip from '/public/images/icon_voip.png';
-import smartHome from '/public/images/icon_relocation_services.png';
+
 
 const base = import.meta.env.BASE_URL;
 
@@ -29,28 +30,28 @@ const services = [
     description: 'Eliminate dead zones with professional WiFi solutions ensuring seamless connectivity everywhere.',
     icon: 'network',
     image: wifiOptimizationImg,
-    link: `${base}/services`,
+    link: `${base}/services#wifi-optimization`,
   },  
   {
     title: 'Fixed Wireless Solutions',
     description: ' High-speed wireless internet for locations where traditional wired infrastructure isn\'t available.',
     icon: 'network',
     image: fixedWireless,
-    link: `${base}/services`,
+    link: `${base}/services#fixed-wireless`,
   },  
   {
     title: 'Smart Home',
-    description: 'Smart Home solutions',
+    description: 'Transform your home into an intelligent space with integrated automation and control.',
     icon: 'network',
     image: smartHome,
-    link: `${base}/networkcabling`,
+    link: `${base}/services#smart-home`,
   },
    {
     title: 'VOIP',
-    description: 'VOIP services',
+    description: 'Feature-rich VOIP phone systems delivering clear communication and reduced telecommunications costs.',
     icon: 'voip',
     image: voip,
-    link: `${base}/networkcabling`,
+    link: `${base}/services#voip`,
   },
   
 {
@@ -58,63 +59,63 @@ const services = [
     description: 'Professional LAN installations with copper and fibre optic solutions for optimal performance.',
     icon: 'network',
     image: networkCablingImg,
-    link: `${base}/networkcabling`,
+    link: `${base}/services#network-cabling`,
   },
   {
     title: 'Data Centre Solutions',
     description: 'Complete data centre design and build services with network optimization.',
     icon: 'datacenter',
     image: dataCentreImg,
-    link: `${base}/data-centre`,
+    link: `${base}/services#data-centre`,
   },
   {
     title: 'CCTV & Access Control',
     description: 'High-performance security solutions with advanced network connectivity.',
     icon: 'security',
     image: cctvImg,
-    link: `${base}/cctv-access-control`,
+    link: `${base}/services#cctv`,
   },
   {
     title: 'Cloud Solutions',
     description: 'Scalable cloud infrastructure to support your growing business needs.',
     icon: 'cloud',
     image: cloudImg,
-    link: `${base}/services`,
+    link: `${base}/services#cloud`,
   },
   {
     title: 'Cybersecurity Services',
     description: 'Comprehensive security measures to protect your IT infrastructure.',
     icon: 'shield',
     image: cybersecurityImg,
-    link: `${base}/services`,
+    link: `${base}/services#cybersecurity`,
   },
   {
     title: 'Managed IT Support',
     description: '24/7 IT support and monitoring to ensure seamless operations.',
     icon: 'support',
     image: managedItImg,
-    link: `${base}/services`,
+    link: `${base}/services#managed-it`,
   },
   {
     title: 'Audio Visual Solutions',
     description: 'We transform spaces into immersive experiences with cutting-edge audio visual technology.',
     icon: 'audiovisual',
     image: audioVisualImg,
-    link: `${base}/services`,
+    link: `${base}/services#audiovisual`,
   },
   {
     title: 'UPS Systems',
     description: 'We provide reliable uninterruptible power systems for seamless business continuity always.',
     icon: 'ups',
     image: upsImg,
-    link: `${base}/services`,
+    link: `${base}/services#ups`,
   },
   {
     title: 'Biometric Systems',
     description: 'Biometric systems ensuring secure network access and efficient cable management solutions.',
     icon: 'infrastructure',
     image: biometricImg,
-    link: `${base}/services`,
+    link: `${base}/services#biometric`,
   }
 ];
 
