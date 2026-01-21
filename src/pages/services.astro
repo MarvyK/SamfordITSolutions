@@ -3,10 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { Image } from 'astro:assets';
-import networkCablingImg from '/public/images/icon_network_cabling.png';
 
 // Import all service images
-import itinfrastructureImg from '/public/images/it_infrastructure.png';
 import networkCablingImg from '/public/images/icon_network_cabling.png';
 import dataCentreImg from '/public/images/icon_data_center.png';
 import cctvImg from '/public/images/icons_cctv_accesscontrol.png';
@@ -16,127 +14,329 @@ import managedItImg from '/public/images/icon_managed_it.png';
 import audioVisualImg from '/public/images/icon_audiovisual.png';
 import upsImg from '/public/images/icon_ups.png';
 import biometricImg from '/public/images/icon_biometrics.png';
+import itRelocationImg from '/public/images/icon_relocation_services.png';
+import wifiImg from '/public/images/icon_wifi.png';
+import fixedWirelessImg from '/public/images/icon_fixedWireless.png';
+import smartHomeImg from '/public/images/icons_cctv_accesscontrol.png';
+import voipImg from '/public/images/icon_voip.png';
+import servicesImg from '/public/images/icon_all_services.png';
+
 
 const base = import.meta.env.BASE_URL;
 
 const services = [
   {
+    id: 'network-cabling',
     title: 'Network Cabling',
-    description: 'Professional LAN installations with copper and fibre optic solutions for optimal performance.',
-    icon: 'network',
+    shortDescription: 'Professional LAN installations with copper and fibre optic solutions for optimal performance.',
+    fullDescription: 'Professional structured cabling solutions form the backbone of your IT infrastructure. We deliver comprehensive LAN installations using both copper and fibre optic technologies, ensuring optimal performance, reliability, and scalability for your growing business needs.',
     image: networkCablingImg,
-    link: `${base}/networkcabling`,
+    benefits: [
+      'Cat5e, Cat6, and Cat6a copper cabling installations',
+      'Single-mode and multi-mode fibre optic solutions',
+      'Professional cable management and documentation',
+      'Testing and certification to industry standards',
+      'Future-proof infrastructure design',
+      'Minimal disruption to daily operations'
+    ]
   },
   {
+    id: 'data-centre',
     title: 'Data Centre Solutions',
-    description: 'Complete data centre design and build services with network optimization.',
-    icon: 'datacenter',
+    shortDescription: 'Complete data centre design and build services with network optimization.',
+    fullDescription: 'From initial design to full implementation, we provide complete data centre solutions tailored to your specific requirements. Our expertise ensures maximum uptime, efficient cooling, proper power distribution, and scalable infrastructure that grows with your business.',
     image: dataCentreImg,
-    link: `${base}/data-centre`,
+    benefits: [
+      'Custom data centre design and planning',
+      'Rack installation and cable management',
+      'Power distribution and redundancy solutions',
+      'Environmental monitoring systems',
+      'Network optimization and performance tuning',
+      'Disaster recovery and backup planning'
+    ]
   },
   {
+    id: 'cctv',
     title: 'CCTV & Access Control',
-    description: 'High-performance security solutions with advanced network connectivity.',
-    icon: 'security',
+    shortDescription: 'High-performance security solutions with advanced network connectivity.',
+    fullDescription: 'Protect your assets with advanced security solutions that integrate seamlessly with your network infrastructure. We deploy high-performance IP-based CCTV systems and sophisticated access control platforms that provide real-time monitoring and comprehensive security management.',
     image: cctvImg,
-    link: `${base}/cctv-access-control`,
+    benefits: [
+      'IP-based HD and 4K camera systems',
+      'Network video recorders with remote access',
+      'Integrated access control systems',
+      'Biometric and card-based authentication',
+      'Mobile app monitoring and alerts',
+      'Scalable solutions for any facility size'
+    ]
   },
   {
+    id: 'cloud',
     title: 'Cloud Solutions',
-    description: 'Scalable cloud infrastructure to support your growing business needs.',
-    icon: 'cloud',
+    shortDescription: 'Scalable cloud infrastructure to support your growing business needs.',
+    fullDescription: 'Embrace the flexibility and scalability of cloud computing with our comprehensive cloud services. We help businesses migrate, manage, and optimize their cloud infrastructure across leading platforms, ensuring cost-effectiveness, security, and seamless integration with existing systems.',
     image: cloudImg,
-    link: `${base}/services`,
+    benefits: [
+      'Cloud migration and implementation services',
+      'Multi-cloud and hybrid cloud strategies',
+      'Cloud backup and disaster recovery',
+      'Scalable storage and computing resources',
+      '24/7 cloud infrastructure monitoring',
+      'Cost optimization and resource management'
+    ]
   },
   {
+    id: 'cybersecurity',
     title: 'Cybersecurity Services',
-    description: 'Comprehensive security measures to protect your IT infrastructure.',
-    icon: 'shield',
+    shortDescription: 'Comprehensive security measures to protect your IT infrastructure.',
+    fullDescription: 'In today\'s threat landscape, robust cybersecurity is essential. We provide comprehensive security solutions that protect your network, data, and systems from evolving cyber threats. Our multi-layered approach ensures your business stays secure while maintaining operational efficiency.',
     image: cybersecurityImg,
-    link: `${base}/services`,
+    benefits: [
+      'Firewall deployment and management',
+      'Intrusion detection and prevention systems',
+      'Vulnerability assessments and penetration testing',
+      'Email security and anti-phishing solutions',
+      'Employee security awareness training',
+      'Compliance and security policy development'
+    ]
   },
   {
+    id: 'managed-it',
     title: 'Managed IT Support',
-    description: '24/7 IT support and monitoring to ensure seamless operations.',
-    icon: 'support',
+    shortDescription: '24/7 IT support and monitoring to ensure seamless operations.',
+    fullDescription: 'Focus on your core business while we handle your IT infrastructure. Our managed IT services provide proactive monitoring, maintenance, and support to ensure your systems run smoothly 24/7. We become your dedicated IT department, available whenever you need us.',
     image: managedItImg,
-    link: `${base}/services`,
+    benefits: [
+      '24/7 network monitoring and support',
+      'Proactive maintenance and patch management',
+      'Help desk and user support services',
+      'Performance optimization and reporting',
+      'Strategic IT planning and consultation',
+      'Predictable monthly costs with no surprises'
+    ]
   },
   {
+    id: 'audiovisual',
     title: 'Audio Visual Solutions',
-    description: 'We transform spaces into immersive experiences with cutting-edge audio visual technology.',
-    icon: 'audiovisual',
+    shortDescription: 'We transform spaces into immersive experiences with cutting-edge audio visual technology.',
+    fullDescription: 'Transform your meeting rooms, conference halls, and presentation spaces with cutting-edge audio visual technology. We design and install integrated AV systems that enhance communication, collaboration, and engagement while maintaining simplicity and reliability.',
     image: audioVisualImg,
-    link: `${base}/services`,
+    benefits: [
+      'Conference room and boardroom AV systems',
+      'Video conferencing solutions (Zoom, Teams, etc.)',
+      'Digital signage and display systems',
+      'Professional audio systems and acoustics',
+      'Control systems and automation',
+      'Training and ongoing technical support'
+    ]
   },
   {
+    id: 'ups',
     title: 'UPS Systems',
-    description: 'We provide reliable uninterruptible power systems for seamless business continuity always.',
-    icon: 'ups',
+    shortDescription: 'We provide reliable uninterruptible power systems for seamless business continuity always.',
+    fullDescription: 'Protect your critical systems from power disruptions with reliable uninterruptible power supply solutions. We design, install, and maintain UPS systems that provide seamless backup power, ensuring business continuity during outages and protecting sensitive equipment from power fluctuations.',
     image: upsImg,
-    link: `${base}/services`,
+    benefits: [
+      'Right-sized UPS solutions for your needs',
+      'Single-phase and three-phase systems',
+      'Battery backup and runtime calculations',
+      'Remote monitoring and management',
+      'Preventive maintenance programs',
+      'Integration with building management systems'
+    ]
   },
   {
+    id: 'biometric',
     title: 'Biometric Systems',
-    description: 'Biometric systems ensuring secure network access and efficient cable management solutions.',
-    icon: 'infrastructure',
+    shortDescription: 'Biometric systems ensuring secure network access and efficient cable management solutions.',
+    fullDescription: 'Enhance security and streamline access management with advanced biometric authentication systems. From fingerprint scanners to facial recognition, we implement secure, user-friendly biometric solutions that integrate seamlessly with your existing security infrastructure and network.',
     image: biometricImg,
-    link: `${base}/services`,
+    benefits: [
+      'Fingerprint and facial recognition systems',
+      'Integration with access control platforms',
+      'Time and attendance tracking',
+      'Multi-factor authentication solutions',
+      'Secure data storage and encryption',
+      'Scalable systems for any organization size'
+    ]
+  },
+  {
+    id: 'it-relocation',
+    title: 'IT Relocation Services',
+    shortDescription: 'Professional IT infrastructure relocation with minimal downtime and maximum efficiency.',
+    fullDescription: 'Moving your business doesn\'t have to mean disrupting your operations. Our comprehensive IT relocation services ensure a smooth transition of your entire IT infrastructure to a new location. We handle everything from planning and packing to reinstallation and testing, minimizing downtime and getting you back to business quickly.',
+    image: itRelocationImg, 
+    benefits: [
+      'Detailed pre-move planning and assessment',
+      'Professional equipment packing and labeling',
+      'Secure transportation of IT assets',
+      'Complete reinstallation and reconfiguration',
+      'Network and system testing post-move',
+      'Minimal downtime with weekend/after-hours options'
+    ]
+  },
+  {
+    id: 'wifi-optimization',
+    title: 'WiFi Optimization Solutions',
+    shortDescription: 'Enterprise-grade wireless networks designed for optimal performance and coverage.',
+    fullDescription: 'Eliminate dead zones and connectivity issues with our professional WiFi optimization services. We design, deploy, and optimize wireless networks that deliver consistent, high-speed connectivity throughout your facility. From site surveys to ongoing management, we ensure your wireless infrastructure meets the demands of modern business.',
+    image: wifiImg,
+    benefits: [
+      'Comprehensive wireless site surveys and heatmapping',
+      'Enterprise-grade access point deployment',
+      'Guest network configuration and management',
+      'Seamless roaming across multiple access points',
+      'Performance monitoring and optimization',
+      'Scalable solutions for any facility size'
+    ]
+  },
+  {
+    id: 'fixed-wireless',
+    title: 'Fixed Wireless Solutions',
+    shortDescription: 'High-speed wireless connectivity without the need for traditional fiber or cable infrastructure.',
+    fullDescription: 'Get reliable, high-speed internet connectivity in locations where traditional wired infrastructure is unavailable or impractical. Our fixed wireless solutions provide fast, secure broadband connectivity using advanced wireless technology, perfect for remote offices, temporary sites, or as a backup connection for business continuity.',
+    image: fixedWirelessImg,
+    benefits: [
+      'Rapid deployment without trenching or cabling',
+      'High-bandwidth connectivity up to gigabit speeds',
+      'Cost-effective alternative to fiber installation',
+      'Reliable backup internet connection',
+      'Point-to-point and point-to-multipoint options',
+      'Professional installation and ongoing support'
+    ]
+  },
+  {
+    id: 'smart-home',
+    title: 'Smart Home Solutions',
+    shortDescription: 'Integrated home automation systems for enhanced comfort, security, and energy efficiency.',
+    fullDescription: 'Transform your home into an intelligent living space with our comprehensive smart home solutions. We integrate lighting, climate control, security, entertainment, and more into a seamless, user-friendly system you can control from anywhere. Experience the convenience, security, and energy savings of a fully automated home.',
+    image: smartHomeImg,
+    benefits: [
+      'Integrated lighting and climate control automation',
+      'Smart security systems with remote monitoring',
+      'Whole-home audio and video distribution',
+      'Voice control integration (Alexa, Google, etc.)',
+      'Energy management and monitoring',
+      'Professional installation and personalized setup'
+    ]
+  },
+  {
+    id: 'voip',
+    title: 'VOIP Services',
+    shortDescription: 'Advanced voice over IP phone systems that reduce costs and enhance communication.',
+    fullDescription: 'Modernize your business communications with feature-rich VOIP phone systems. Our cloud-based and on-premise solutions deliver crystal-clear voice quality, advanced call management features, and seamless integration with your existing business tools. Reduce telecommunications costs while gaining flexibility and mobility for your workforce.',
+    image: voipImg,
+    benefits: [
+      'Cloud-based and on-premise VOIP solutions',
+      'Advanced call routing and auto-attendant features',
+      'Mobile apps for remote and hybrid workers',
+      'Integration with CRM and business applications',
+      'Significant cost savings over traditional phone lines',
+      'Scalable systems that grow with your business'
+    ]
   }
-];
-
-const benefits = [
-  'Reliable and efficient data transfer',
-  'Scalability to support future growth',
-  'Enhanced communication and connectivity',
-  'Long-term cost-effectiveness',
-  'Minimized downtime and maintenance',
-  'Professional installation and support',
 ];
 ---
 
 <Layout 
-  title="Network Cabling Solutions - Samford IT Solutions" 
-  description="Professional network cabling services including LAN installations, fiber optic solutions, and data centre infrastructure."
+  title="Our Services - Samford IT Solutions" 
+  description="Comprehensive IT solutions designed to meet your business needs and drive growth. From network cabling to cloud solutions, we've got you covered."
 >
   <Header />
   
   <main>
     <!-- Hero Section -->
     <section class="relative text-white py-20 thegreen">
-      <div class="container-custom">
-        <div class="max-w-4xl">
-          <h1 class="mb-6 text-5xl economica-bold">Services we offer</h1>
-          <p class="text-xl text-primary-100 leading-relaxed mb-8">
-            From network cabling to cloud solutions, we provide comprehensive managed IT services designed to ensure seamless operations, optimal performance, and sustainable growth.
-          </p>
-          <a href="/contact" class="btn border-2 bg-primary-500 text-primary-900 hover:bg-gray-100">
-            Request a Quote
-          </a>
-        </div>
+  <div class="container-custom">
+    <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+      <div class="flex-1 max-w-4xl">
+        <h1 class="mb-6 text-5xl economica-bold">Our Services</h1>
+        <p class="text-xl text-primary-100 leading-relaxed mb-8">
+          Comprehensive IT solutions designed to meet your business needs and drive growth. From network cabling to cloud solutions, we provide end-to-end managed IT services.
+        </p>
       </div>
-    </section>
+      <div class="flex-shrink-0">
+        <Image 
+          src={servicesImg} 
+          alt="Our Services" 
+          class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-lg"
+        />
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="section bg-white">
+    <!-- Sticky Navigation -->
+    <nav class="bg-white sticky z-50 shadow-md" style="top: 100px;">
       <div class="container-custom">
-        <div class="grid md:grid-cols-3 lg:grid-cols-3 gap-8">
+        <ul class="flex flex-wrap gap-4 py-4 justify-center text-sm md:text-base">
           {services.map(service => (
-            <div class="card group hover:border-primary-200 border border-transparent transition-all duration-300">
-              <article>
-              {service.image && (
-                <Image src={service.image} alt={service.title} class="h-auto w-40 float-left"/>
-              )}
-              <h3 class="text-3xl font-semibold mb-3 text-left economica-bold">{service.title}</h3></article>
-              <p class="text-gray-600 mb-4">{service.description}</p>
-              <a href={service.link} class="text-primary-600 font-medium hover:text-primary-700 inline-flex items-center group-hover:gap-2 gap-1 transition-all">
-                Learn more
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
+            <li>
+              <a href={`#${service.id}`} class="text-primary-600 hover:text-primary-700 font-medium transition-colors">
+                {service.title}
               </a>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Services Sections -->
+    <div class="bg-gray-50">
+      {services.map((service, index) => (
+        <section id={service.id} class="section scroll-mt-20">
+          <div class="container-custom">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+              <!-- Service Header -->
+              <div class="flex flex-col md:flex-row gap-6 mb-8 pb-6 border-b-4 border-primary-600">
+                <div class="flex flex-col md:flex-row items-center gap-6 md:gap-4">
+                  <div class="flex-shrink-0">
+                    <Image 
+                      src={service.image} 
+                      alt={service.title} 
+                      class="w-24 h-22 md:w-32 md:h-29"
+                    />
+                  </div>
+                  <div class="flex-1 text-center md:text-left">
+                    <h2 class="text-3xl md:text-4xl economica-bold">
+                      {service.title}
+                    </h2>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Service Description -->
+              <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                {service.fullDescription}
+              </p>
+
+              <!-- Benefits Grid -->
+              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {service.benefits.map(benefit => (
+                  <div class="flex items-start gap-3 p-4 bg-gray-50 rounded-lg border-l-4 border-primary-600">
+                    <svg class="w-6 h-6 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span class="text-gray-700">{benefit}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      ))}
+    </div>
+
+    <!-- CTA Section -->
+    <section class="section thegreen text-white text-center">
+      <div class="container-custom max-w-3xl">
+        <h2 class="text-4xl economica-bold mb-4">Ready to Transform Your IT Infrastructure?</h2>
+        <p class="text-xl text-primary-100 mb-8">
+          Let's discuss how we can tailor these solutions to meet your specific business needs.
+        </p>
+        <a href={`${base}/contact`} class="btn border-2 bg-primary-500 text-primary-900 hover:bg-gray-100">
+          Get in Touch Today
+        </a>
       </div>
     </section>
   </main>

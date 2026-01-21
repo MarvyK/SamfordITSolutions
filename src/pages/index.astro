@@ -16,11 +16,44 @@ import managedItImg from '/public/images/icon_managed_it.png';
 import audioVisualImg from '/public/images/icon_audiovisual.png';
 import upsImg from '/public/images/icon_ups.png';
 import biometricImg from '/public/images/icon_biometrics.png';
+import wifiOptimizationImg from '/public/images/icon_wifi.png';
+import fixedWireless from '/public/images/icon_fixedWireless.png';
+import voip from '/public/images/icon_voip.png';
+import smartHome from '/public/images/icon_relocation_services.png';
 
 const base = import.meta.env.BASE_URL;
 
 const services = [
+{
+    title: 'WIFI',
+    description: 'Eliminate dead zones with professional WiFi solutions ensuring seamless connectivity everywhere.',
+    icon: 'network',
+    image: wifiOptimizationImg,
+    link: `${base}/services`,
+  },  
   {
+    title: 'Fixed Wireless Solutions',
+    description: ' High-speed wireless internet for locations where traditional wired infrastructure isn\'t available.',
+    icon: 'network',
+    image: fixedWireless,
+    link: `${base}/services`,
+  },  
+  {
+    title: 'Smart Home',
+    description: 'Smart Home solutions',
+    icon: 'network',
+    image: smartHome,
+    link: `${base}/networkcabling`,
+  },
+   {
+    title: 'VOIP',
+    description: 'VOIP services',
+    icon: 'voip',
+    image: voip,
+    link: `${base}/networkcabling`,
+  },
+  
+{
     title: 'Network Cabling',
     description: 'Professional LAN installations with copper and fibre optic solutions for optimal performance.',
     icon: 'network',
@@ -118,7 +151,7 @@ const benefits = [
             <div class="card group hover:border-primary-200 border border-transparent transition-all duration-300">
               <article>
               {service.image && (
-                <Image src={service.image} alt={service.title} class="h-auto w-40 float-left"/>
+                <Image src={service.image} alt={service.title} class="h-auto w-40 float-right"/>
               )}
               <h3 class="text-3xl font-semibold mb-3 text-left economica-bold">{service.title}</h3></article>
               <p class="text-gray-600 mb-4">{service.description}</p>

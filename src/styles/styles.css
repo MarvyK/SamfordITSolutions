@@ -60,3 +60,10 @@ text-green {
   --tw-bg-opacity: 1;
   background-color: rgb(164 219 199 / var(--tw-bg-opacity, 1));
 }
+/* Sticky nav on services page */
+.scroll-mt-20 {
+  scroll-margin-top: calc(100px + 5rem); /* 100px for nav position + nav height */
+}
+html {
+  scroll-behavior: smooth;
+}

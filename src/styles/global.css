@@ -20,7 +20,7 @@
   }
 
   .section {
-    @apply py-16;
+    @apply py-[1.5rem];
   }
 
   .container-custom {
