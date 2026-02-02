@@ -22,3 +22,27 @@ export default defineConfig({
     },
   },
 });
+
+// import { defineConfig } from "astro/config";
+// import tailwind from "@astrojs/tailwind";
+
+// // https://astro.build/config
+// export default defineConfig({
+//   site: "https://www.samford.co.za",
+//   base: "/it",
+//   integrations: [
+//     tailwind({
+//       applyBaseStyles: false,
+//     }),
+//   ],
+//   output: "static",
+//   compressHTML: true,
+//   build: {
+//     inlineStylesheets: "auto",
+//   },
+//   vite: {
+//     build: {
+//       cssMinify: "lightningcss",
+//     },
+//   },
+// });
